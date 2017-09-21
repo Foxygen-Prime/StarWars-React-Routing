@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // Import Link <<<<<<<<<<<<<
-
+import {Link} from 'react-router-dom';
 
 class List extends Component {
   render(){
@@ -12,13 +12,17 @@ class List extends Component {
       let films = people.films.map((films)=>{
         let endpoint = films.substr(films.indexOf("/api/") + 5);
         return <li key={films}>
-          {/*Add a Link set to /films. Pass in the value of 'endpoint' for the text <<<<<<<<<<<<<<<<<<<<<<<<*/}
+          {/* /* /*Add a Link set to /films. Pass in the value of 'endpoint' for the text <<<<<<<<<<<<<<<<<<<<<<<<*/ }
+          <Link to="/Films">{endpoint}
+          </Link>
         </li>
       })
       let starships = people.starships.map((starships)=>{
         let endpoint = starships.substr(starships.indexOf("/api/") + 5 );
         return <li key={starships}>
           {/*Add a Link set to /starships. Pass in the value of 'endpoint' for the text <<<<<<<<<<<<<<<<<*/}
+          <Link to="/Starships">{endpoint}
+          </Link>
           </li>
       })
       return (
@@ -49,14 +53,14 @@ class List extends Component {
             </div>
           </div>
           <div className="col-lg-4">
-            <h4 className = "sub-headings">Film Enpoints</h4>
+            <h4 className = "sub-headings">Film Endpoints</h4>
             <hr/>
             <ul>
               {films}
             </ul>
           </div>
           <div className="col-lg-4">
-            <h4 className = "sub-headings">Starship Enpoints</h4>
+            <h4 className = "sub-headings">Starship Endpoints</h4>
             <hr/>
             <ul>
               {starships}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // Import Link <<<<<<<<<<<<<<<<<<
-
+import {Link} from 'react-router-dom';
 
 class List extends Component {
   render(){
@@ -11,6 +11,8 @@ class List extends Component {
         let endpoint = films.substr(films.indexOf("/api/") + 5);
         return <li key={films}>
             {/*Add a Link set to /films. Pass in the value of 'endpoint' for the text <<<<<<<<<<<<<<<*/}
+            <Link to="/Films">{endpoint}
+            </Link>
           </li>
       })
       return (
@@ -82,8 +84,7 @@ class Starships extends Component {
 
   render() {
     console.log('render', this.state)
-    // Your render should consist of the BaseLayout with the following children componenets: Appetizers, Entres, and Dessert.
-    // Each component needs to receive state via props.
+
     return (
       <div className="app-body offset col-lg-10 col-lg-offset-1">
         <List starships={this.state.starships}/>
